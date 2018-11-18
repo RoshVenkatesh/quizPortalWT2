@@ -25,6 +25,7 @@
                 {{ item.question }}
             </ion-card-content>
 
+            <div *ngIf="item.correct == 'notanswered'">
             <ion-card-content>
                 <div *ngIf="item.fib">
                     <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
@@ -41,6 +42,21 @@
                 </div>
                 
               </ion-card-content>
+            </div>
+
+            <div *ngIf="item.correct === 1" style="display: inline-block;" >
+                <ion-card-content>
+                    {{ item.answer }} <img src = '../../assets/imgs/tick.jpg' height = '42' width = '42' >
+                </ion-card-content>
+            </div>
+
+            <div *ngIf="item.correct === 0" style="display: inline-block;">
+                <ion-card-content>
+                    {{ item.answer }}  <img src = '../../assets/imgs/cross.jpg'  height = '42' width = '42' >
+                </ion-card-content>
+            </div>
+
+
         </ion-card>
       </ion-col>
 
@@ -52,6 +68,7 @@
                   {{ item.question }}
               </ion-card-content>
   
+              <div *ngIf="item.correct == 'notanswered'">
               <ion-card-content>
                   <div *ngIf="item.fib">
                       <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
@@ -68,6 +85,20 @@
                   </div>
                   
                 </ion-card-content>
+              </div>
+  
+              <div *ngIf="item.correct === 1">
+                  <ion-card-content>
+                      <img src = '../../assets/imgs/tick.jpg' height="42" width="8"> 
+                  </ion-card-content>
+              </div>
+  
+              <div *ngIf="item.correct === 0">
+                  <ion-card-content>
+                    <img src = '../../assets/imgs/cross.jpg'height="42" width="8">
+                  </ion-card-content>
+              </div>
+
           </ion-card>
         </ion-col>
 
@@ -79,6 +110,7 @@
                   {{ item.question }}
               </ion-card-content>
   
+              <div *ngIf="item.correct == 'notanswered'">
               <ion-card-content>
                   <div *ngIf="item.fib">
                       <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
@@ -95,6 +127,20 @@
                   </div>
                   
                 </ion-card-content>
+              </div>
+  
+              <div *ngIf="item.correct === 1">
+                  <ion-card-content>
+                      <img src = '../../assets/imgs/tick.jpg' height="42" width="8"> 
+                  </ion-card-content>
+              </div>
+  
+              <div *ngIf="item.correct === 0">
+                  <ion-card-content>
+                    <img src = '../../assets/imgs/cross.jpg' height="42" width="8">
+                  </ion-card-content>
+              </div>
+
           </ion-card>
         </ion-col>
   
@@ -103,10 +149,11 @@
             <ion-card *ngFor="let item of items1.slice(15,20); let i = index">
     
                 <ion-card-content class="card-content">
-                    {{ item.question }}
-                </ion-card-content>
-    
-                <ion-card-content>
+                {{ item.question }}
+            </ion-card-content>
+
+            <div *ngIf="item.correct == 'notanswered'">
+            <ion-card-content>
                 <div *ngIf="item.fib">
                     <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
                     <button no-margin ion-button full text-uppercase (click)='checkAnswer(item,item.response)'>ANSWER</button>
@@ -122,6 +169,20 @@
                 </div>
                 
               </ion-card-content>
+            </div>
+
+            <div *ngIf="item.correct === 1">
+                <ion-card-content>
+                    <img src = '../../assets/imgs/tick.jpg' height="42" width="8"> 
+                </ion-card-content>
+            </div>
+
+            <div *ngIf="item.correct === 0">
+                <ion-card-content>
+                  <img src = '../../assets/imgs/cross.jpg'height="42" width="8" >
+                </ion-card-content>
+            </div>
+
             </ion-card>
           </ion-col>
       </ion-row>

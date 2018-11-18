@@ -17,25 +17,28 @@ import { Http, Headers } from '@angular/http';
 export class QuizPage {
 
   dummy_list: any;
-  items1: Array<{question:string,answer:string,title:string,options:Array<"">,fib:Number, response: String}>;
+  items1: Array<{question:string,answer:string,title:string,options:Array<"">,fib:Number, response: String, correct:String}>;
   title1 : String;
   title2 : String;
   title3 : String;
   title4 : String;
+  subjects : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public loadingCtrl: LoadingController,) {
     this.items1 = [];
+    this.subjects = navParams.get('item');
     
   }
 
   ionViewDidLoad() {
+    console.log(this.subjects)
     console.log('ionViewDidLoad QuizPage');
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
     loading.present();
     this.dummy_list = ['Molecules', 'Hydrogen', 'Noble Gases',"Chemical Reaction", 'Atoms']
-    let postParams = {'topics': this.dummy_list}
+    let postParams = {'topics': this.subjects.topics}
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
@@ -57,7 +60,8 @@ export class QuizPage {
                  title : data[i].title,
                  fib : data[i].fib,
                  options : optionsArray,
-                 response : ""             
+                 response : "",   
+                 correct: "notanswered"          
              })                        
            }
            console.log(this.items1[0])
@@ -76,12 +80,15 @@ export class QuizPage {
 public checkAnswer(item, given_answer){
   console.log(given_answer)
 
-  if (given_answer.toLowerCase() === item.answer){
+  if (given_answer.toLowerCase() === item.answer.toLowerCase()){
     console.log("Correct")
+    item.correct = 1
   }
   else{
     console.log("Wrong")
+    item.correct = 0
   }
+
 }
 
 }
