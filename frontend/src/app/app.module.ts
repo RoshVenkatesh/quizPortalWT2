@@ -8,10 +8,13 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FlashCardComponent } from '../components/flash-card/flash-card';
 import { QuizPage } from '../pages/quiz/quiz';
+import { HomePage } from '../pages/home/home';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { QuizPage } from '../pages/quiz/quiz';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    QuizPage
+    FlashCardComponent,
+    QuizPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -33,7 +39,8 @@ import { QuizPage } from '../pages/quiz/quiz';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    QuizPage
+    QuizPage,
+    HomePage
   ],
   providers: [
     StatusBar,
