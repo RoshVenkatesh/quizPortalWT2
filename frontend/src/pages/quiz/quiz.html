@@ -15,23 +15,117 @@
 
 <ion-content padding>
 
-    <ion-card *ngFor="let item of items1">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 class = "grid">
+          <h1>{{ title1 }} </h1>
+        <ion-card *ngFor="let item of items1.slice(0,5); let i = index">
 
-        <ion-card-header class="card-content">
-            {{ item.question }}
-        </ion-card-header>
+            <ion-card-content class="card-content">
+                {{ item.question }}
+            </ion-card-content>
 
-        <ng-container *ngIf="item.fib">
-            <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="answer" required></ion-input>
-        </ng-container>
+            <ion-card-content>
+                <div *ngIf="item.fib">
+                    <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
+                    <button no-margin ion-button full text-uppercase (click)='checkAnswer(item,item.response)'>ANSWER</button>
+                </div>
+    
+                <div *ngIf="item.fib == 0">
+                    <ion-list radio-group required >
+                        <ion-item *ngFor = 'let option of item.options'>
+                            <ion-label>{{ option }}</ion-label>
+                            <ion-radio value=" {{ option }} " (ionSelect) = "checkAnswer(item,option)"></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                </div>
+                
+              </ion-card-content>
+        </ion-card>
+      </ion-col>
 
-        <ng-container *ngIf="item.fib == 0">
-            <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="answer" required></ion-input>
-        </ng-container>
-
-
-       
+      <ion-col col-6 class = "grid">
+          <h1>{{ title2 }} </h1>
+          <ion-card *ngFor="let item of items1.slice(5,10); let i = index">
+  
+              <ion-card-content class="card-content">
+                  {{ item.question }}
+              </ion-card-content>
+  
+              <ion-card-content>
+                  <div *ngIf="item.fib">
+                      <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
+                      <button no-margin ion-button full text-uppercase (click)='checkAnswer(item,item.response)'>ANSWER</button>
+                  </div>
       
-      </ion-card>
+                  <div *ngIf="item.fib == 0">
+                      <ion-list radio-group required >
+                          <ion-item *ngFor = 'let option of item.options'>
+                              <ion-label>{{ option }}</ion-label>
+                              <ion-radio value=" {{ option }} " (ionSelect) = "checkAnswer(item,option)"></ion-radio>
+                          </ion-item>
+                      </ion-list>
+                  </div>
+                  
+                </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col col-6 class = "grid">
+            <h1>{{ title3 }} </h1>
+          <ion-card *ngFor="let item of items1.slice(10,15); let i = index">
+  
+              <ion-card-content class="card-content">
+                  {{ item.question }}
+              </ion-card-content>
+  
+              <ion-card-content>
+                  <div *ngIf="item.fib">
+                      <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
+                      <button no-margin ion-button full text-uppercase (click)='checkAnswer(item,item.response)'>ANSWER</button>
+                  </div>
+      
+                  <div *ngIf="item.fib == 0">
+                      <ion-list radio-group required >
+                          <ion-item *ngFor = 'let option of item.options'>
+                              <ion-label>{{ option }}</ion-label>
+                              <ion-radio value=" {{ option }} " (ionSelect) = "checkAnswer(item,option)"></ion-radio>
+                          </ion-item>
+                      </ion-list>
+                  </div>
+                  
+                </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col col-6 class = "grid">
+            <h1>{{ title4 }} </h1>
+            <ion-card *ngFor="let item of items1.slice(15,20); let i = index">
+    
+                <ion-card-content class="card-content">
+                    {{ item.question }}
+                </ion-card-content>
+    
+                <ion-card-content>
+                <div *ngIf="item.fib">
+                    <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="item.response" required></ion-input>
+                    <button no-margin ion-button full text-uppercase (click)='checkAnswer(item,item.response)'>ANSWER</button>
+                </div>
+    
+                <div *ngIf="item.fib == 0">
+                    <ion-list radio-group required >
+                        <ion-item *ngFor = 'let option of item.options'>
+                            <ion-label>{{ option }}</ion-label>
+                            <ion-radio value=" {{ option }} " (ionSelect) = "checkAnswer(item,option)"></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                </div>
+                
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+      </ion-row>
+
+  </ion-grid>
 
 </ion-content>
