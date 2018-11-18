@@ -8,80 +8,17 @@
 <ion-content padding>
   <ion-grid>
   <ion-row>
-        <ion-col col-3>
+        <ion-col col-3 *ngFor="let item of items1">
         <flash-card class="card">
           <div class="flash-card-front">
-            <div>yo</div>
-            <div>heyy</div>
+            <div>{{item.name}}</div>
           </div>
-          <div class="flash-card-back">ARE COOL!</div>
+          <div class="flash-card-back">
+              <div *ngFor="let i of item.topics">{{i}}</div>
+              <button ion-button (click)="checklogin(item)">Take Quiz</button>
+          </div>
       </flash-card>
       </ion-col>
-      <ion-col col-3>
-          <flash-card class="card">
-            <div class="flash-card-front">
-              <div>yo</div>
-              <div>heyy</div>
-            </div>
-            <div class="flash-card-back">ARE COOL!</div>
-        </flash-card >
-        </ion-col>
-        <ion-col col-3>
-            <flash-card class="card">
-              <div class="flash-card-front">
-                <div>yo</div>
-                <div>heyy</div>
-              </div>
-              <div class="flash-card-back">ARE COOL!</div>
-          </flash-card>
-          </ion-col>
-          <ion-col col-3 >
-              <flash-card class="card">
-                <div class="flash-card-front">
-                  <div>yo</div>
-                  <div>heyy</div>
-                </div>
-                <div class="flash-card-back">ARE COOL!</div>
-            </flash-card>
-            </ion-col>
 </ion-row>
-<ion-row class="rows">
-        <ion-col col-3 >
-        <flash-card class="card">
-          <div class="flash-card-front">
-            <div>yo</div>
-            <div>heyy</div>
-          </div>
-          <div class="flash-card-back">ARE COOL!</div>
-      </flash-card>
-      </ion-col>
-      <ion-col col-3 >
-          <flash-card class="card" >
-            <div class="flash-card-front">
-              <div>yo</div>
-              <div>heyy</div>
-            </div>
-            <div class="flash-card-back">ARE COOL!</div>
-        </flash-card>
-        </ion-col>
-        <ion-col col-3 >
-            <flash-card class="card">
-              <div class="flash-card-front">
-                <div>yo</div>
-                <div>heyy</div>
-              </div>
-              <div class="flash-card-back">ARE COOL!</div>
-          </flash-card>
-          </ion-col>
-          <ion-col col-3 >
-              <flash-card class="card">
-                <div class="flash-card-front">
-                  <div>yo</div>
-                  <div>heyy</div>
-                </div>
-                <div class="flash-card-back">ARE COOL!</div>
-            </flash-card>
-            </ion-col>
-  </ion-row>
 </ion-grid>
 </ion-content>

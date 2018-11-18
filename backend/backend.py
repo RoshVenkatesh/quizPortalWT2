@@ -21,6 +21,11 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config["MONGO_URI"] = "mongodb://localhost:27017/quizPortal"
 mongo = PyMongo(app)
 
+@app.route('/get_topics',methods=['GET'])
+def get_topics():
+    x=mongo.db.topics.find_one({'_id':1})
+    x['_id']=str(x['_id'])
+    return jsonify({'topics':x})
 @app.route('/get_questions', methods=['POST'])
 def get_questions():
     data=request.get_json()
