@@ -7,12 +7,31 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>quizPage</ion-title>
+    <ion-title>Quiz Page</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    <ion-card *ngFor="let item of items1">
+
+        <ion-card-header class="card-content">
+            {{ item.question }}
+        </ion-card-header>
+
+        <ng-container *ngIf="item.fib">
+            <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="answer" required></ion-input>
+        </ng-container>
+
+        <ng-container *ngIf="item.fib == 0">
+            <ion-input  type="text" placeholder="Enter your answer here" name="answer" [(ngModel)]="answer" required></ion-input>
+        </ng-container>
+
+
+       
+      
+      </ion-card>
 
 </ion-content>
