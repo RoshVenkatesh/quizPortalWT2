@@ -4,4 +4,14 @@ page-quiz {
         border: solid 2px black;
         text-align : center;
     }
+
+    .answerC{
+        font-weight: bold;
+        background-color: green
+    }
+
+    .answerW{
+        font-weight: bold;
+        background-color: darkred
+    }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
+import { HelloIonicPage } from '../hello-ionic/hello-ionic';
 
 /**
  * Generated class for the QuizPage page.
@@ -78,7 +79,6 @@ export class QuizPage {
 }
 
 public checkAnswer(item, given_answer){
-  console.log(given_answer)
 
   if (given_answer.toLowerCase() === item.answer.toLowerCase()){
     console.log("Correct")
@@ -89,6 +89,10 @@ public checkAnswer(item, given_answer){
     item.correct = 0
   }
 
+}
+
+public continue(){
+  this.navCtrl.setRoot(HelloIonicPage,{loggedin:1})
 }
 
 }

@@ -43,16 +43,15 @@
                 
               </ion-card-content>
             </div>
-
-            <div *ngIf="item.correct === 1" style="display: inline-block;" >
-                <ion-card-content>
-                    {{ item.answer }} <img src = '../../assets/imgs/tick.jpg' height = '42' width = '42' >
+            <div *ngIf="item.correct === 1" >
+                <ion-card-content class = "answerC">
+                    YESS, you're right !! The correct answer is {{ item.answer }}
                 </ion-card-content>
             </div>
 
-            <div *ngIf="item.correct === 0" style="display: inline-block;">
-                <ion-card-content>
-                    {{ item.answer }}  <img src = '../../assets/imgs/cross.jpg'  height = '42' width = '42' >
+            <div *ngIf="item.correct === 0" >
+                <ion-card-content class = "answerW" >
+                    OOPS, you got it wrong, the correct answer is {{ item.answer }}
                 </ion-card-content>
             </div>
 
@@ -88,16 +87,17 @@
               </div>
   
               <div *ngIf="item.correct === 1">
-                  <ion-card-content>
-                      <img src = '../../assets/imgs/tick.jpg' height="42" width="8"> 
+                  <ion-card-content class = "answerC">
+                      YESS, you're right !! The correct answer is {{ item.answer }}
                   </ion-card-content>
               </div>
   
-              <div *ngIf="item.correct === 0">
-                  <ion-card-content>
-                    <img src = '../../assets/imgs/cross.jpg'height="42" width="8">
+              <div *ngIf="item.correct === 0"  >
+                  <ion-card-content class = "answerW" >
+                      OOPS, you got it wrong, the correct answer is {{ item.answer }} 
                   </ion-card-content>
               </div>
+  
 
           </ion-card>
         </ion-col>
@@ -128,18 +128,19 @@
                   
                 </ion-card-content>
               </div>
-  
-              <div *ngIf="item.correct === 1">
-                  <ion-card-content>
-                      <img src = '../../assets/imgs/tick.jpg' height="42" width="8"> 
+              <div *ngIf="item.correct === 1" >
+                  <ion-card-content class = "answerC">
+                      YESS, you're right !! The correct answer is {{ item.answer }} 
                   </ion-card-content>
               </div>
   
-              <div *ngIf="item.correct === 0">
-                  <ion-card-content>
-                    <img src = '../../assets/imgs/cross.jpg' height="42" width="8">
+              <div *ngIf="item.correct === 0" >
+                  <ion-card-content class = "answerW" >
+                      OOPS, you got it wrong, the correct answer is {{ item.answer }} 
                   </ion-card-content>
               </div>
+  
+  
 
           </ion-card>
         </ion-col>
@@ -171,22 +172,27 @@
               </ion-card-content>
             </div>
 
-            <div *ngIf="item.correct === 1">
-                <ion-card-content>
-                    <img src = '../../assets/imgs/tick.jpg' height="42" width="8"> 
+            <div *ngIf="item.correct === 1" >
+                <ion-card-content class = "answerC">
+                    YESS, you're right !! The correct answer is {{ item.answer }}
                 </ion-card-content>
             </div>
 
-            <div *ngIf="item.correct === 0">
-                <ion-card-content>
-                  <img src = '../../assets/imgs/cross.jpg'height="42" width="8" >
+            <div *ngIf="item.correct === 0" >
+                <ion-card-content class = "answerW" >
+                    OOPS, you got it wrong, the correct answer is {{ item.answer }}
                 </ion-card-content>
             </div>
+
+
 
             </ion-card>
           </ion-col>
       </ion-row>
 
   </ion-grid>
+
+  <button ion-button full text-uppercase (click)='continue()'>Try Again (pick another topic)</button>
+  <button ion-button full text-uppercase (click)='graph()'>View Results</button>
 
 </ion-content>
