@@ -7,6 +7,7 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FlashCardComponent } from '../components/flash-card/flash-card';
 
 
 @Component({
