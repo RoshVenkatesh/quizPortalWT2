@@ -6,10 +6,13 @@ import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FlashCardComponent } from '../components/flash-card/flash-card';
+import { QuizPage } from '../pages/quiz/quiz';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,12 @@ import { FlashCardComponent } from '../components/flash-card/flash-card';
     ItemDetailsPage,
     ListPage,
     FlashCardComponent
+    QuizPage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -28,7 +34,8 @@ import { FlashCardComponent } from '../components/flash-card/flash-card';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    QuizPage
   ],
   providers: [
     StatusBar,
