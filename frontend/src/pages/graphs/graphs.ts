@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
+import { Storage } from '@ionic/storage';
 import { Chart } from 'chart.js';
 
 
@@ -21,11 +22,14 @@ export class GraphsPage {
   scores : any;
   topic : any;
   percent : any;
+  actual : any;
+  possible: any;
+  name : any;
   @ViewChild('barCanvas') barCanvas;
  
     barChart: any;
 
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams,  public loadingCtrl: LoadingController) {
+  constructor(public storage: Storage,public navCtrl: NavController, public http: Http, public navParams: NavParams,  public loadingCtrl: LoadingController) {
     this.scores = navParams.get('scores');
   }
 
@@ -33,13 +37,21 @@ export class GraphsPage {
 
     this.topic = [];
     this.percent = [];
-
+    this.actual = [];
+    this.possible = [];
+    this.name = '';
 
     for (let i = 0; i < this.scores.length ; i++)
     {
       this.topic.push(this.scores[i].name)
       this.percent.push((this.scores[i].score/this.scores[i].possible)*100)
+      this.actual.push(this.scores[i].score)
+      this.possible.push(this.scores[i].possible)
     }
+
+    this.storage.get('username').then((value) => {
+
+      this.name = value;
 
     console.log(this.topic);
     console.log(this.percent);
@@ -89,6 +101,7 @@ export class GraphsPage {
 
 
     console.log('ionViewDidLoad GraphsPage');
-  }
+  });
+}
 
 }
