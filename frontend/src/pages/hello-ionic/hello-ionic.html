@@ -5,20 +5,29 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="background">
   <ion-grid>
   <ion-row>
         <ion-col col-3 *ngFor="let item of items1">
-        <flash-card class="card">
+            <br>     
+        <flash-card>          
           <div class="flash-card-front">
-            <div>{{item.name}}</div>
+              <div class="container">
+              <img src = "{{ item.no }}" style="opacity: 0.4" height="220" width="280" >    
+              <div class="centered">{{item.name}}</div> 
+            </div>       
           </div>
+          
           <div class="flash-card-back">
-              <div *ngFor="let i of item.topics">{{i}}</div>
-              <button ion-button (click)="checklogin(item)">Take Quiz</button>
-          </div>
+              <div *ngFor="let i of item.topics" style="font-family: cursive">{{i}}</div>
+              <button ion-button round outline (click)="checklogin(item)" class="quiz">Take Quiz</button>
+          </div>  
+
       </flash-card>
+    <br>
       </ion-col>
+      <br>
+      <br>
 </ion-row>
 </ion-grid>
 </ion-content>

@@ -9,7 +9,7 @@ import {QuizPage} from '../quiz/quiz'
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-  items1: Array<{name:string,topics:Array<"">}>;
+  items1: Array<{name:string,topics:Array<"">,no:string}>;
   loggedin:Number;
   constructor( public http: Http,public navParams:NavParams,public storage:Storage,public navCtrl:NavController,public alertCtrl:AlertController) {
 
@@ -78,12 +78,18 @@ export class HelloIonicPage {
           .subscribe(res => {
            let data = res.json()['topics'];
            console.log(data)
+           let c=0
            for(let i in data){
              if(i!='_id'){
+               //console.log("../../assets/imgs/"+name)
+               //console.log(name)
                this.items1.push({
                  name : i,
-                 topics:data[i]          
-             })    
+                 topics:data[i] ,
+                 no:"../../assets/imgs/"+i+".jpg"      
+             })
+             console.log(this.items1[c].no)
+             c=c+1    
             }                    
            }
   });

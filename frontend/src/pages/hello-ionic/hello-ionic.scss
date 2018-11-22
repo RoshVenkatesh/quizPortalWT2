@@ -1,10 +1,38 @@
 page-hello-ionic {
 
-    .card{
-        margin-left: -800px;
-        padding-right: 300px;
+    .container {
+        position: relative;
+        text-align: center;
+        font-family: cursive;
+      color: #4B0082 ;
+      font-size: 30px;
     }
-    .rows{
-        padding-left:-200px;
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
+    .background{
+        background-color: #800080
+    }
+    button.quiz {
+        
+       background-color: #800080;
+        color: #D8BFD8;
+        
+        border: 3px solid map_get($colors, theme_color) !important;
+        padding: 22px !important;
+        //opacity : 0.8;
+        &.activated
+         {
+           background-color: #D8BFD8;
+           //color:#800080;
+          }
+      }
+      .quiz:hover{
+        background-color: #D8BFD8 !important;
+        color:#800080
+    }
+    
 }

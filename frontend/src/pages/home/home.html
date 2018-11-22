@@ -13,6 +13,53 @@
 </ion-header>
 
 
-<ion-content padding>
-<button ion-button (click)="navigate()">Start Quiz</button>
+<ion-content padding class = "background" scroll="false">
+  <div class="fixed-content">
+      <div class="logoHeader">
+          <img alt="logo" height="80" style="position:fixed; left:390px; top:255px;" src="../assets/imgs/logo1.jpg">
+
+      </div>
+
+      <div class="so center">
+          <div class="inner">
+            <div class="name">
+              Quiz<span class="b">
+                <p class="p">An intelligent quiz platform</p>Me
+              </span>
+            </div>
+            <div class="stack-box">
+              <div class="stack">
+                <div class="item">
+                  <div class="inner-item"></div>
+                </div>
+                <div class="item">
+                  <div class="inner-item"></div>
+                </div>
+                <div class="item">
+                  <div class="inner-item"></div>
+                </div>
+                <div class="item">
+                  <div class="inner-item"></div>
+                </div>
+                <div class="item">
+                  <div class="inner-item"></div>
+                </div>
+              </div>
+    
+              <div class="box">
+    
+                <div class="bottom"></div>
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="top"></div>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+       
+        <div padding>
+        <button ion-button round outline class = "signup" style="width:25%;position:relative;left:42%" block (click)="navigate()">Start Quiz</button>
+      </div>
+    </div>
 </ion-content>
