@@ -1,0 +1,48 @@
+page-graphs {
+
+    .ios, .md {
+ 
+        page-home {
+     
+            .scroll-content {
+                background-color: map-get($colors, light);
+            }
+     
+            ion-card-header {
+                font-weight: bold;
+            }
+     
+        }
+     
+    }
+
+    .hello{
+        text-align: center;
+    }
+
+    .border{
+        margin-top: 30px;
+        margin-left : -50px;
+    }
+
+    .canvas {
+        height : 200px; 
+        width : 800px;
+    }
+
+
+    .col, .row{
+        text-align: center;
+        border: solid 1px black;
+    }
+
+    .head-col, .head-row{
+        text-align: center;
+        border: solid 1px black;
+        font-weight : bold;
+    }
+
+    .empty{
+        border: None;
+    }
+}

@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { FlashCardComponent } from '../components/flash-card/flash-card';
 import { QuizPage } from '../pages/quiz/quiz';
 import { HomePage } from '../pages/home/home';
+import { GraphsPage } from '../pages/graphs/graphs';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomePage } from '../pages/home/home';
     ListPage,
     FlashCardComponent,
     QuizPage,
-    HomePage
+    HomePage,
+    GraphsPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { HomePage } from '../pages/home/home';
     ItemDetailsPage,
     ListPage,
     QuizPage,
-    HomePage
+    HomePage,
+    GraphsPage
   ],
   providers: [
     StatusBar,
