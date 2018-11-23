@@ -4,8 +4,9 @@ page-hello-ionic {
         position: relative;
         text-align: center;
         font-family: cursive;
-      color: #4B0082 ;
+        color: #003300;
       font-size: 30px;
+      background-color: #8ca78c;
     }
     .centered {
         position: absolute;
@@ -14,25 +15,32 @@ page-hello-ionic {
         transform: translate(-50%, -50%);
     }
     .background{
-        background-color: #800080
+        background-image: url('../assets/imgs/final.jpg');
     }
     button.quiz {
         
-       background-color: #800080;
-        color: #D8BFD8;
+        background-color: #00997a;
+        color: #003300;
         
         border: 3px solid map_get($colors, theme_color) !important;
         padding: 22px !important;
         //opacity : 0.8;
         &.activated
          {
-           background-color: #D8BFD8;
+            background-color: #8ca78c;
            //color:#800080;
           }
       }
       .quiz:hover{
-        background-color: #D8BFD8 !important;
-        color:#800080
+        background-color: #8ca78c !important;
+        color: #003300;
+
+        //background-color: #8ca78c   
     }
-    
+    .flash-card-front{
+        background-color: #8ca78c;
+    }
+    .flash-card-back{
+        background-color: #8ca78c;
+    }
 }
